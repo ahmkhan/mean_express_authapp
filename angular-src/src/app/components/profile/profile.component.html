@@ -1,0 +1,7 @@
+<div *ngIf="loginUserProfile">
+  <h2 class="page-header">{{loginUserProfile.FullName}}</h2>
+  <ul class="list-group">
+    <li class="list-group-item">Email Address: {{loginUserProfile.UserEmail}}</li>
+    <li class="list-group-item">User Name: {{loginUserProfile.UserName}}</li>
+  </ul>
+</div>

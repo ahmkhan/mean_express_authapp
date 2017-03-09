@@ -1,0 +1,17 @@
+<h2 class="page-header">Login User</h2>
+
+<form (submit)="loginUser()">
+
+  <div class="form-group">
+    <label>User Name</label>
+    <input type="text" class="form-control" [(ngModel)]="UserName" name="UserName">
+  </div>
+
+  <div class="form-group">
+    <label>User Password</label>
+    <input type="password" class="form-control" [(ngModel)]="UserPassword" name="UserPassword">
+  </div>
+
+  <input type="submit" class="btn btn-primary" value="Login">
+
+</form>

@@ -14,7 +14,7 @@ const config = require('./config/database');
 mongoose.connect(config.database);
 
 mongoose.connection.on('connected', () => {
-    console.log('Mongoose Connected Successfully to ' + config.database);
+    console.log('Mongoose Connected Successfully to ' + config);
 });
 
 mongoose.connection.on('error', (err) => {
@@ -26,7 +26,7 @@ const app = express();
 const usersRoutes = require('./routes/usersRoutes');
 
 //PORT Number
-const port = 3000;
+const port = process.env.PORT || 8000;
 
 //CORS MIddleware
 app.use(cors());
@@ -50,6 +50,10 @@ app.get('/', (req, res) => {
     res.send('Invalid EndPoint');
 });
 
+
+app.get('*', (req, res) => {
+    res.sendFile(path.join(__dirname, 'public/index.html'));
+});
 
 app.listen(port, () => {
     console.log('Server started on port ' + port);
