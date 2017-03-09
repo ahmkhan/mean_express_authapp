@@ -14,7 +14,7 @@ const config = require('./config/database');
 mongoose.connect(config.database);
 
 mongoose.connection.on('connected', () => {
-    console.log('Mongoose Connected Successfully to ' + config);
+    console.log('Mongoose Connected Successfully to ' + config.database);
 });
 
 mongoose.connection.on('error', (err) => {
